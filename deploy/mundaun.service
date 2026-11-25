@@ -1,0 +1,18 @@
+[Unit]
+Description=Mundaun huts
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ren
+Group=ren
+WorkingDirectory=/home/ren/mundaun
+Environment=HOST=0.0.0.0
+Environment=PORT=8080
+ExecStart=/usr/bin/python3 /home/ren/mundaun/server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

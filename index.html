@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1d4e78">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Closest hut in Obersaxen Mundaun, the menu with prices, and how long the ski over takes.">
+  <title>Mundaun Huts</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Obersaxen Mundaun</p>
+      <h1 id="title">Huts</h1>
+    </div>
+    <div class="header-actions">
+      <button id="admin-open" type="button">Admin</button>
+      <button id="lang" type="button" aria-label="Language">DE</button>
+    </div>
+  </header>
+  <p id="season" class="season"></p>
+  <main>
+    <section id="view-map">
+      <div class="tools">
+        <button id="locate" class="primary" type="button"></button>
+        <div class="pace" role="group" aria-label="Pace">
+          <button type="button" data-pace="easy"></button>
+          <button type="button" data-pace="fast"></button>
+        </div>
+      </div>
+      <p id="loc-status" class="status" aria-live="polite"></p>
+      <div class="chips" id="presets"></div>
+      <div class="map-wrap">
+        <svg id="map" role="img" aria-labelledby="map-title">
+          <title id="map-title">Ski area</title>
+        </svg>
+        <div class="map-ui">
+          <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+          <button id="fit" type="button" aria-label="Fit">⌖</button>
+        </div>
+        <p id="scale" class="scale"></p>
+      </div>
+      <article id="closest" class="sheet" aria-live="polite"></article>
+    </section>
+    <section id="view-hungry" hidden>
+      <form id="search" role="search">
+        <label id="q-label" for="q"></label>
+        <input id="q" type="search" enterkeyhint="search" autocomplete="off" autocapitalize="off">
+      </form>
+      <div class="chips" id="suggestions"></div>
+      <div class="rank" role="group">
+        <button type="button" data-rank="closest"></button>
+        <button type="button" data-rank="cheapest"></button>
+      </div>
+      <div id="results"></div>
+    </section>
+    <section id="view-list" hidden>
+      <label class="check"><input id="meals-only" type="checkbox" checked> <span id="meals-label"></span></label>
+      <div id="list"></div>
+    </section>
+  </main>
+  <nav>
+    <button type="button" data-tab="map" aria-current="page"></button>
+    <button type="button" data-tab="hungry"></button>
+    <button type="button" data-tab="list"></button>
+  </nav>
+  <dialog id="detail"></dialog>
+  <dialog id="admin"></dialog>
+  <noscript><p>This hut finder needs JavaScript.</p></noscript>
+  <script src="data.js"></script>
+  <script src="route.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

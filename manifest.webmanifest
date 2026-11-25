@@ -1,0 +1,14 @@
+{
+  "name": "Mundaun Huts",
+  "short_name": "Mundaun",
+  "description": "Closest hut, menu and ski time in Obersaxen Mundaun.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e7f2fa",
+  "theme_color": "#1d4e78",
+  "lang": "de",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

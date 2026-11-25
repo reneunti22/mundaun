@@ -1,0 +1,5 @@
+admin.password
+overrides.json
+__pycache__/
+duckdns.token
+duckdns.ini
